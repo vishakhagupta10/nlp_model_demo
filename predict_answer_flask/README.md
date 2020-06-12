@@ -9,7 +9,7 @@
  2. Enter into the directory
 
  ```
- cd nlp_demo_flask
+ cd predict_answer_flask
  ```
  3. Install requirements using the following command
  ```
