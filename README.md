@@ -3,10 +3,8 @@
 Question Answering & fill in the missing words on BERT, BIOBERT, CLINICAL BERT, RoBERTa, BIO-MED RoBERTa, XLNET and spanish to english translation using Neural Machine Translation Model
 
 ## Dataset for Question Answering model
-To use the BioASQ dataset, you need to register in the BioASQ website which authorizes the use of the dataset. Please unpack the pre-processed BioASQ dataset(factoid) provided above to a directory
-```
- http://participants-area.bioasq.org/general_information/general_information_registration/
- ```
+To use the BioASQ dataset, you need to register in the BioASQ website which authorizes the use of the dataset. Please unpack the pre-processed BioASQ dataset(factoid) provided above to a directory http://participants-area.bioasq.org/general_information/general_information_registration/
+
  
 ## Steps to Set-Up for Question Answering model
 
