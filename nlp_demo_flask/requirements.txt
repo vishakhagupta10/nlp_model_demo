@@ -21,7 +21,7 @@ numpy == 1.18.1
 
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\model_translate.py: 4
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\trans1.py: 4
-psutil == 5.4.8
+psutil == 5.6.6
 
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\app.py: 17
 pytorch_transformers == 1.2.0
