@@ -11,7 +11,7 @@ Trained upto 5 epoch.
  2. Enter into the directory
 
  ```
- cd xlnet
+ cd robeerta_folder
  ```
  3. Install requirements using the following command
  ```
