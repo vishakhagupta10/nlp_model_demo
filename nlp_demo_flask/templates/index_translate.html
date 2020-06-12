@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>translation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    .textbuttons {
+      text-align: center;
+    } 
+    .form-control{
+      font-family: 'roboto';
+      font-size: 22px;
+    }
+    .info{
+     float: center;
+     text-align: center;
+    }
+    #out{
+     text-align: center; 
+      font-family: 'roboto';
+      font-size: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+<div class="container mt-3">
+  <h2><i>Spanish to</i><b><font color="blue"> English </font></b> Translation</h2>
+  <p><i>Spanish to </i><b><font color="blue">English</font></b>  translation is a model trained on <i>Google Neural Machine Translation</i> model.</p>
+  <p> <i>Translated sentence-</i> <b><font color="red">RED</font></b> <br>  </p>
+  <form class="myForm" action=""  method="POST">
+    <div class="form-group">
+      <label for="comment">Input text:</label>  
+      <textarea class="form-control" rows="2" id="comment" name="question"></textarea>
+      <span class='spantext' id='remainingChars'></span>
+    </div>
+    <div class="mt-3 textbuttons">
+      <button type="submit" class="btn btn-primary" id="predictBtn">Translate</button>
+    </div>
+  </form><br><br>
+
+  <div class='info'>
+     <p id="output" style='font-family: "roboto";font-size: 23px;'></p> 
+  </div><br><br>
+
+  <div>
+    <b><p>Demo Manual</p></b>
+    <ol>
+      <li>
+       Enter any spanish sentence you want to translate.
+      </li>
+      <li>
+        Get english translation of spanish text entered
+      </li>
+    </ol>
+  </div>
+  
+</div>
+
+<script type="text/javascript">
+  $(document).on("submit", ".myForm", function (e) {
+    
+      var input_txt = document.getElementById('comment').value
+      var URL = 'http://127.0.0.1:5000/translateutil'
+      var dataString = "text="+input_txt;
+      
+      $.ajax({
+          type: 'POST',
+          url: URL,
+          data: dataString,
+          success: function(resp) {
+            console.log(resp)
+            document.getElementById('output').innerHTML = resp;
+          }
+      });
+    e.preventDefault()
+    }
+  )
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NLP TASK DEMO</title>
+   
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      }
+      body, div, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      }
+      body {
+      background: url("https://ak.picdn.net/shutterstock/videos/23047225/thumb/1.jpg") no-repeat center;
+      background-size:cover;
+      }
+      h1 {
+      margin: 0 0 10px 0;
+      font-weight: 400;
+      }
+      .main-block {
+      display: flex;
+      width: 90%;
+      padding: 10px 0; 
+      border-radius: 5px;
+      box-shadow: 1px 1px 8px 0px #666; 
+      background: #fff;
+      }
+      .block-item {
+      width: 50%;
+      padding: 20px; 
+      }
+      .block-item.right {
+      border-left: 1px solid #aaa;
+      }
+      i {
+      width: 50px;
+      font-size: 24px;
+      }
+      .btn {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      margin: 10px 0;
+      outline: none;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px #666;
+      background: #e8e8e8;
+      color: #fff;
+      cursor: pointer;
+      }
+      .btn:hover {
+      transform: scale(1.03);
+      }
+      .btn span {
+      font-size: 16px;
+      }
+      .question_answer {
+      background: #3a589e;
+      }
+      .fill_in_the_blanks {
+      background: #429cd6;
+      }
+      .translation{
+      background: #d34836;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="block-item left">
+        <h1>NLP TASK DEMO</h1>
+        <p><small>Exploring different language model for various nlp related down stream task</small>
+        </p>
+      </div>
+      <div class="block-item right">
+      <form  action="{{ url_for('question')}}">
+        <button class="btn question_answer" id="question_answer"  type="submit" ><i></i><span>question_answer</span></button>
+        </form>
+        <form action="{{ url_for('filltheblank')}}">
+        <button class="btn fill_in_the_blanks"  id="fill_in_the_blank" type="submit"><i></i><span>fill_in_the_blanks</span></button>
+        </form>
+        <form action="{{ url_for('translation')}}">
+        <button class="btn translation" id="translation" type="submit" ><i></i><span>translation</span></button>
+         </form>
+      </div>
+    </div>
+  </body>
+</html>

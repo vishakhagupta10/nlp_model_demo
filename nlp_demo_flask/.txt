@@ -1,0 +1,13 @@
+Starting Training 
+Read 118964 sentence pairs 
+Read 7664 sentence pairs 
+Train pairs: 7664Test pairs: 0Counted Words -> Trimmed Vocabulary Sizes (w/ EOS and SOS tags):en, 4002 -> 4005sp, 2818 -> 2821 
+
+Random Train Pair: ('no tenemos mas tiempo .', 'we re out of time .') 
+
+Random Test Pair: None 
+
+Current mem usage: 43.8 
+Encoder and Decoder Created
+Current mem usage: 50.8 
+Number of epochs 1 

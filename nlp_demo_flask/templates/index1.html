@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- <link rel="stylesheet" type="text/css" href="./style.css">-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body style="background: #ececec;">
+
+  <div class="login">
+    <h1>Ask a Question</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <!-- Default form contact -->
+   <form class="myform" action=""  method="POST">
+      <textarea id="Context_Information" name="Context_Information" rows="17" cols="140"
+        placeholder="Context Information" required="required" value={{context}}></textarea>
+      <textarea id="Your_Question" name="Your_Question" rows="3" cols="140" placeholder="Your Question"
+        required="required" value={{question}}></textarea>
+      <!--	<input type="text" name="sales in second month" placeholder="sales in second month" required="required" /> -->
+   
+      <label class="sr-only" for="rating">Choose a model</label>
+        <select class="form-control" id="model" name="model">
+    <option value="bert">BERT_UNCASED</option>
+    <option value="biobert">BIO-BERT</option>
+    <option value="clinicalbert">CLINICAL_BERT</option>
+    <option value="roberta">ROBERTA</option>
+    <option value="biomedroberta">BIOMED-ROBERTA</option>
+    <option value="xlnet">XLNET</option>
+</select>
+        
+      
+      <hr>
+      <div>
+        <input type="submit" class="button1"  name="pred" value="predicts" onclick="clicked='predicts'"></input>
+        <input type="submit" class="button1" name="pred" value="visualize" onclick="clicked='visualize'"></input>
+      </div>
+
+    </form> 
+
+
+    <!-- Default form contact -->
+    <br>
+    <div>
+    	<div>
+    	<img id="loader" src="{{ url_for('static', filename='css/loader.gif') }}" style="display:none;">
+    	<div>
+    	
+         <p  style='font-family: "roboto";font-size: 20px;text-align: left;'> <strong> Context Information: </strong> <i> {{context}} </i>  </p> 
+    	 <p  style='font-family: "roboto";font-size: 20px;text-align: left;'> <strong> Question: </strong> <i> {{question_c}} </i>  </p> 
+    	
+  <!--  <strong>Predi;tion Text: </strong> -->
+  
+        <p style='font-family: "roboto";font-size: 22px; color: blue;text-align: left;'> <strong>  <i> {{prediction_text}} </i> </strong> </p> 
+    
+
+<!--   <strong>Prediction Score:</strong>  -->
+        <p style='font-family: "roboto";font-size: 22px; color: blue;text-align: left;'> <strong>  <i> {{prediction_score}} </i> </strong> </p>
+</div>
+
+
+</body>
+
+
+</html>  

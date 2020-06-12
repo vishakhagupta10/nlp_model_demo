@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+	    <script>
+function DrawTheChart(ChartData,ChartOptions,ChartId,ChartType){
+console.log(ChartData, ChartOptions)
+eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d"),{type:"'+ChartType+'",data:ChartData,options:ChartOptions});document.getElementById(ChartId).getContext("2d").stroke();')
+}
+		</script>
+		<script>
+ WebFontConfig = {
+ google: 
+{families: ["Open Sans",]},active: function() { 
+ DrawTheChart(ChartData,ChartOptions,"chart-01","bar")}
+};
+		</script>
+		<script asyn src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js">
+		</script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+		
+	</head>
+	<body>
+		<canvas  id="chart-01" width="16000" height="600" ></canvas>
+		<script> function MoreChartOptions(){} 
+var ChartData = {
+	labels : [ {% for item in labels %}
+           "{{ item }}",
+          {% endfor %}],
+	datasets : [
+		{
+		data : [{% for item in values1 %}
+               "{{ item }}",
+              {% endfor %}],
+		backgroundColor :'#939dba',
+		borderColor : 'rgba(41,34,34,0.5)',
+		label:"start score"},
+
+		{
+		data : [{% for item in values2 %}
+               "{{ item }}",
+              {% endfor %}],
+		backgroundColor :'#cfc787',
+		borderColor : '#aaaaaa',
+		label:"end score"},
+
+]
+	};
+ChartOptions= {
+responsive:false,
+	layout:{padding:{top:12,left:14,bottom:12,},},
+	 scales: {
+	xAxes:[{
+gridLines:{borderDash:[],},
+}],
+
+	yAxes:[{
+gridLines:{borderDash:[],},
+}],
+ },plugins:{
+datalabels:{display:true,
+	font:{
+		style:' bold',},},
+},
+legend:{
+	labels:{
+		generateLabels: function(chart){
+			 return  chart.data.datasets.map( function( dataset, i ){
+				return{
+					text:dataset.label,
+					lineCap:dataset.borderCapStyle,
+					lineDash:[],
+					lineDashOffset: 0,
+					lineJoin:dataset.borderJoinStyle,
+					fillStyle:dataset.backgroundColor,
+					strokeStyle:dataset.borderColor,
+					lineWidth:dataset.pointBorderWidth,
+					lineDash:dataset.borderDash,
+				}
+			})
+		},
+
+	},
+},
+
+title:{
+	display:true,
+	text:'Token Start & End Score',
+	fontColor:'#3498db',
+	fontSize:32,
+	fontStyle:' bold',
+	},
+elements: {
+	arc: {
+},
+	line: {
+},
+	rectangle: {
+borderWidth:3,
+},
+},
+tooltips:{
+},
+hover:{
+	mode:'nearest',
+	animationDuration:400,
+},
+};
+ DrawTheChart(ChartData,ChartOptions,"chart-01","bar");</script></body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- <link rel="stylesheet" type="text/css" href="./style.css">
+ -->  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body style="background: #ececec;">
+
+  <div class="login">
+    <h1>Ask a Question</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <!-- Default form contact -->
+    <form class="myForm" action="{{ url_for('predict')}}" method="post">
+      <textarea id="Context_Information" name="Context_Information" rows="13" cols="140"
+        placeholder="Context Information" required="required" value={{context}}></textarea>
+      <textarea id="Your_Question" name="Your_Question" rows="3" cols="140" placeholder="Your Question"
+        required="required" value={{question}}></textarea>
+      <!--	<input type="text" name="sales in second month" placeholder="sales in second month" required="required" /> -->
+      <div class="dropdown">
+        <button type="button" class="dropbtn" name="model choosen">Choose a model</button>
+        <div class="dropdown-content">
+          <a href="#">bert_base_uncased</a>
+          <a href="#">bert_base_cased</a>
+          <a href="#">bio_bert</a>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <button type="submit" class="button1">Predict answer</button>
+      </div>
+
+    </form>
+
+
+    <!-- Default form contact -->
+    <br>
+    <div>
+    	<div>
+    	<img id="loader" src="{{ url_for('static', filename='css/loader.gif') }}" style="display:none;">
+    	<div>
+  <!--  <strong>Prediction Text: </strong> -->
+    <span id="prediction_text">
+    	
+    </span>
+    <br>
+<!--   <strong>Prediction Score:</strong>  -->
+    <span id="prediction_score">
+   
+   </span>
+</div>
+
+
+</body>
+<script>
+
+  $(document).on("submit", ".myForm", function (e) {
+    console.log($(this).serialize());
+    $("#loader").show();
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr("method"),
+      data: $(this).serialize(),
+      success: function (data, status) {
+
+      $("#loader").hide();	
+      data=JSON.parse(data);
+      var txt = ""
+      var score = ""
+      txt = data.prediction_text;
+      score= data.prediction_score;
+       $("#prediction_text").text(txt); 
+       $("#prediction_score").text(score); 
+          
+        console.log("Response Data: ",data);
+        console.log("Response Data: ",data.prediction_text);
+        console.log("Response Data: ",data.prediction_score);
+        
+      },
+      error: function(error){
+      	 $("#loader").hide();	
+      	alert("Something Went Wrong");
+        console.log(error);
+      }
+
+    });
+    e.preventDefault();
+  });
+</script>
+
+</html>
