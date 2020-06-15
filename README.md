@@ -18,7 +18,9 @@ To use the BioASQ dataset, you need to register in the BioASQ website which auth
  Training script is present with name _translation.ipynb, experiments can be done with different hyper parameter values for better result
  
 ## Visualization of attention head
- _VIZ.ipynb comprises attention head visualizations through BERTVIZ library.  
+ _VIZ.ipynb comprises attention head visualizations through BERTVIZ library. 
+ 
+## Demo video attached
  
 
 
