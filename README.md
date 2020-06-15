@@ -20,7 +20,7 @@ To use the BioASQ dataset, you need to register in the BioASQ website which auth
 ## Visualization of attention head
  _VIZ.ipynb comprises attention head visualizations through BERTVIZ library. 
  
-## Demo video attached
+## Demo video and final ppt attached
  
 
 
