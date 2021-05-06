@@ -4,7 +4,7 @@
 Flask == 1.0.2
 
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\app.py: 14
-Flask_Cors == 3.0.7
+Flask_Cors == 3.0.9
 
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\model_translate.py: 12
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\trans1.py: 12
