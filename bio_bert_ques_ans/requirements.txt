@@ -10,7 +10,7 @@ numpy == 1.18.1
 six == 1.12.0
 
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\convert_tf_checkpoint_to_pytorch.py: 23
-tensorflow == 1.13.0rc2
+tensorflow == 2.5.1
 
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\ASQfac.py: 35,36
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\convert_tf_checkpoint_to_pytorch.py: 24
