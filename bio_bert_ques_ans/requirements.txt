@@ -2,7 +2,7 @@
 
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\ASQfac.py: 33
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\convert_tf_checkpoint_to_pytorch.py: 25
-numpy == 1.18.1
+numpy == 1.22.0
 
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\ASQfac.py: 29
 # C:\Users\vishakha\Downloads\push\bio_bert_ques_ans\modeling.py: 24
