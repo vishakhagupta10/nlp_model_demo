@@ -5,7 +5,7 @@ Flask == 1.0.2
 
 # C:\Users\vishakha\Downloads\final_work\predict_answer_flask\app.py: 1
 # C:\Users\vishakha\Downloads\final_work\predict_answer_flask\model.py: 33
-numpy == 1.18.1
+numpy == 1.22.0
 
 # C:\Users\vishakha\Downloads\final_work\predict_answer_flask\model.py: 29
 # C:\Users\vishakha\Downloads\final_work\predict_answer_flask\modeling.py: 24
