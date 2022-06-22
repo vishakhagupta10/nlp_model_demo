@@ -17,7 +17,7 @@ matplotlib == 3.0.2
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\model_visualize_all.py: 33
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\model_visualize_all_bert.py: 33
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\trans1.py: 11
-numpy == 1.18.1
+numpy == 1.22.0
 
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\model_translate.py: 4
 # C:\Users\vishakha\Downloads\final_work\nlp_demo_flask\trans1.py: 4
